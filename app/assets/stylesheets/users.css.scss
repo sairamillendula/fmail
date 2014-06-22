@@ -7,13 +7,25 @@
   }
 }
 
+html, body {
+  height:100%;
+}
+
 nav {
   background: #33393D;
   border-right: 2px solid #000;
   width: 317px;
   height: 100%;
-  top: 70px;
-  left: 12px;
+  margin-top: -70px;
+  color: #fff;
+}
+
+#displace {
+  padding-top: 70px;
+}
+
+#search {
+  margin-top: 20px;
 }
 
 #top-bar {
