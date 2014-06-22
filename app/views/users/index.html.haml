@@ -6,7 +6,10 @@
   #sync-button
   #account
     = image_tag(current_user.profile_pic, :class => "rounded-pic" )
-    .dropdown-icon
+    #dropdown-icon
+      %ul#act-menu
+        %li
+          %a{:href => "/signout"} Logout
 %nav
   #displace
   #search
