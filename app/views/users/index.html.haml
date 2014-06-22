@@ -1,0 +1,36 @@
+%nav{:role => "main"}
+  #logo
+  #search
+  #folders
+    %ul
+      %li Inbox
+      %li Drafts
+      %li Sent
+      %li Starred
+      %li Boomerang
+  #labels 
+    %h3 Labels
+    %ul
+      %li 
+        .circle-indicator
+        .label-text Close Friends
+      %li 
+        .circle-indicator
+        .label-text Hackathons
+      %li 
+        .circle-indicator
+        .label-text Work
+      %li 
+        .circle-indicator
+        .label-text School
+.container
+  .row
+    %h3 Inbox
+    .column
+      %table.table
+        - @inbox.each do |message|
+          %tr 
+            %td= image_tag (get_user_info "#{message['to']['data'].second['id']}"), {:class => "rounded-pic blue-border"}
+            %td #{message["to"]["data"].second["name"]}
+            %td #{message["comments"]["data"].last["message"]}
+            %td= get_awesome_date "#{message['updated_time']}"

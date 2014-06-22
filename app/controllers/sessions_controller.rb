@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     reset_session
 
-    session[:user_id] = user.id  
+    session[:user_id] = user.id
     session['fb_auth'] = auth
     session['fb_access_token'] = auth['credentials']['token']
     session['fb_error'] = nil

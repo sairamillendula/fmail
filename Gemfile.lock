@@ -104,6 +104,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    koala (1.9.0)
+      addressable
+      faraday
+      multi_json
     launchy (2.4.2)
       addressable (~> 2.3)
     listen (2.7.9)
@@ -267,6 +271,7 @@ DEPENDENCIES
   hub
   jbuilder (~> 2.0)
   jquery-rails
+  koala (~> 1.9.0)
   newrelic_rpm
   omniauth
   omniauth-facebook

@@ -16,15 +16,33 @@ p{
 	font-family: arial;
 	margin-left: 10px;
 }
+.table {
+  tr {
+    height: 60px;
+  }
+  td {
+    height: 60px;
+  }
+}
+
 
 .folder_title{
 	font-size: 35px;
 	font-weight: lighter;
 }
 
+.blue-border {
+  border: 3px solid #3498DB;
+  width: 56px;
+}
+
+.gray-border {
+  border: 3px solid #95A5A6;
+  width: 56px;
+}
 
 .rounded-pic {
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
 }
