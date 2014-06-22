@@ -52,6 +52,10 @@
       float: left;
       margin-left: 3px;
     }
+    td:last-child {
+      float: right;
+      margin-right: 40px;
+    }
   }
 }
 
@@ -369,6 +373,19 @@ box-shadow: 0 0 10px rgba(0,0,0, .65);
   #buttons {
     margin-bottom: 20px;
     margin-left: 2px;
+    display: inline-block;
+  }
+
+  #sort {
+    float:right;
+    margin-right: 2px;
+    padding-right: 5px;
+    padding-bottom: 29px;
+    border-bottom: 3px solid #000;
+
+    .recent {
+      font-weight: 600;
+    }
   }
 
 .reply-icon {
