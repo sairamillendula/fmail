@@ -35,10 +35,11 @@
       #delete
       #sort
   #all-messages
-    %table.table
-      - @inbox.each do |message|
-        %tr 
-          %td= image_tag (get_user_info "#{message['to']['data'].second['id']}"), {:class => "rounded-pic blue-border"}
-          %td #{message["to"]["data"].second["name"]}
-          %td #{message["comments"]["data"].last["message"]}
-          %td= get_awesome_date "#{message['updated_time']}"
+    .table
+      %table
+        - @inbox.each do |message|
+          %tr 
+            %td= image_tag (get_user_info "#{message['to']['data'].second['id']}"), {:class => "rounded-pic blue-border"}
+            %td #{message["to"]["data"].second["name"]}
+            %td #{message["comments"]["data"].last["message"]}
+            %td= get_awesome_date "#{message['updated_time']}"

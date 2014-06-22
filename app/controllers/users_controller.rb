@@ -39,8 +39,10 @@ class UsersController < ApplicationController
     now = Time.now
     bad_datetime = Time.parse(bad_datetime).localtime
     if (bad_datetime.strftime("%Y-%m-%d") == now.strftime("%Y-%m-%d") )
-        today = "Today " + bad_datetime.strftime("%l:%M%p")
+        today = bad_datetime.strftime("%l:%M %p")
         return today 
+    elsif (bad_datetime.strftime("%Y-%m-%d") == ((now - 1.day).strftime("%Y-%m-%d")))
+        return "Yesterday"
     else
         regular = bad_datetime.strftime("%d %b")
         return regular

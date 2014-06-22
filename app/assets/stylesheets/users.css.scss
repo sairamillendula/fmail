@@ -4,28 +4,36 @@
   width: 100%;
   top: 70px;
   margin-left: -320px;
-  left: 645px;
+  left: 660px;
 }
 
 #all-messages {
   position: absolute;
-  overflow-y:scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
   height: 100%;
   width: 100%;
   max-width: 100%;
   margin-left: -323px;
   padding-left: 320px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .table {
-  max-width: 100%;
+  table {
+    width: 100%;  
+    max-width: 100%;
+    overflow-y: scroll;
+    margin-right: 380px;
+    margin-bottom: 200px;
 
-  tr {
-    height: 60px;
-  }
-  td {
-    height: 60px;
+    td {
+      padding: 5px;
+    }
+    td:first-child {
+      float: left;
+      margin-left: 3px;
+    }
   }
 }
 
@@ -37,6 +45,7 @@ html, body {
 
 nav {
   background: #33393D;
+  font-family: 'Source Sans Pro', sans-serif;
   border-right: 2px solid #000;
   width: 317px;
   height: 100%;
@@ -60,7 +69,7 @@ nav {
 }
 
 #logo {
-display: inline-block;
+  display: inline-block;
   background: #141d26;
   line-height: 63px;
   height: 70px;
@@ -81,6 +90,18 @@ display: inline-block;
   }
 }
 
+#inbox-header {
+  font-family: 'Source Sans Pro', sans-serif;
+  border-bottom: 1px solid #C3CCCE;
+  margin-bottom: 10px;
+  margin-right: 370px;
+  
+  h3 {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
+}
+
 #labels {
       display: inline-block;
 	font-size: 15px;
@@ -88,17 +109,13 @@ display: inline-block;
 }
 
 .blue-border {
-  border: 3px solid #3498DB;
-  width: 58px;
-
-  img {
-    border: 1px solid #fff;
-  }
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #3498DB;
+  width: 30px;
 }
 
 .gray-border {
-  border: 3px solid #95A5A6;
-  width: 56px;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #95A5A6;
+  width: 30px;
 }
 
 .rounded-pic {
