@@ -20,6 +20,21 @@
 }
 
 .table {
+  .time {
+        color: #525C5E;
+        font-weight: 500;
+    }
+
+    .message {
+        color: #8D9394;
+        font-weight: 400;
+    }
+
+    .name {
+        color: #343D3F;
+        font-weight: 600;
+    }
+
   table {
     width: 100%;  
     max-width: 100%;
@@ -29,7 +44,10 @@
 
     td {
       padding: 5px;
+
+      
     }
+
     td:first-child {
       float: left;
       margin-left: 3px;
