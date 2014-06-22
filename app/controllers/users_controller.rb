@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @graph = Koala::Facebook::GraphAPI.new(current_user.token)
-    @inbox = @graph.get_connections("me", "inbox")
+    # @inbox = @graph.get_connections("me", "inbox")
   end
 
   def edit
