@@ -28,8 +28,13 @@
         .circle-indicator
         .label-text School
 #container
-  %h3 Inbox
-  .column
+  #inbox-header
+    %h3 Inbox
+    #buttons
+      #reply
+      #delete
+      #sort
+  #all-messages
     %table.table
       - @inbox.each do |message|
         %tr 

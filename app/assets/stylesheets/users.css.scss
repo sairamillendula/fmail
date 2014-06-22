@@ -2,11 +2,20 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  top: 70px;
   margin-left: -320px;
   left: 645px;
-  top: 70px;
+}
+
+#all-messages {
+  position: absolute;
   overflow-y:scroll;
-  overflow-x: none;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  margin-left: -323px;
+  padding-left: 320px;
 }
 
 .table {
@@ -23,6 +32,7 @@
 html, body {
   height:100%;
   width: 100%;
+  overflow:hidden;
 }
 
 nav {
@@ -79,7 +89,11 @@ display: inline-block;
 
 .blue-border {
   border: 3px solid #3498DB;
-  width: 56px;
+  width: 58px;
+
+  img {
+    border: 1px solid #fff;
+  }
 }
 
 .gray-border {
