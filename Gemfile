@@ -18,6 +18,7 @@ gem 'thin'
 #auth
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'xmpp4r_facebook'
 gem 'koala', '~> 1.9.0'
 
 #S3

@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
     session['fb_auth'] = auth
     session['fb_access_token'] = auth['credentials']['token']
     session['fb_error'] = nil
+    session[:fb_permissions] = 'xmpp_login, read_mailbox'
 
     if user.email.blank?
       redirect_to edit_user_path(user), :alert => "Please enter your email address."

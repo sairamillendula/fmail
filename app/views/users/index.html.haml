@@ -2,9 +2,9 @@
   #logo
     =image_tag('logo.svg')
     %span mail
-  = link_to ('/compose') do
-    #compose-button
-  #sync-button
+  #compose-button{'onclick' => 'sendDialog();'}
+  = link_to ('/') do
+    #sync-button
   #account
     = image_tag(current_user.profile_pic, :class => "rounded-pic" )
     #dropdown-icon
@@ -29,7 +29,7 @@
         .folder-text Inbox
       %li
         .draft-icon 
-        .folder-text Drafts
+        .folder-text Mail Merge
       %li 
         .star-icon
         .folder-text Starred

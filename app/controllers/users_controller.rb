@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def compose
     @users = User.all
     @graph = Koala::Facebook::GraphAPI.new(current_user.token)
-    @inbox = @graph.get_connections("me", "inbox")
   end
 
   def message
@@ -50,5 +49,21 @@ class UsersController < ApplicationController
       return "blue-border"
     end
   end
-  helper_method :get_user_info, :get_awesome_date, :get_read_class
+
+  def mail_merge()
+    id = '-100000078227649@chat.facebook.com'
+    to = '-642642467@chat.facebook.com'
+    body = "A16Z Hack"
+    subject = 'Sent from FMail'
+    message = Jabber::Message.new to, body
+    message.subject = subject
+
+    client = Jabber::Client.new Jabber::JID.new(id)
+    client.connect
+    client.auth_sasl(Jabber::SASL::XFacebookPlatform.new(client, ENV["OMNIAUTH_PROVIDER_KEY"], current_user.token, ENV["OMNIAUTH_PROVIDER_SECRET"]), nil)
+    client.send message
+    client.close
+  end
+
+  helper_method :get_user_info, :get_awesome_date, :get_read_class, :mail_merge
 end

@@ -2,7 +2,7 @@
   #logo
     =image_tag('logo.svg')
     %span mail
-  = link_to ('/users/compose') do
+  = link_to ('/compose') do
     #compose-button
   #sync-button
   #account
@@ -29,7 +29,7 @@
         .folder-text Inbox
       %li
         .draft-icon 
-        .folder-text Drafts
+        .folder-text Mail Merge
       %li 
         .star-icon
         .folder-text Starred
@@ -55,16 +55,9 @@
         .label-text School
 #container
   #inbox-header
-    %h3 Inbox
-    #buttons
-      .reply-icon
-      .star-icon
-      .trash-icon
-      .info-icon
-    #sort
-      .recent Recent
-  #all-messages
-    .table
-      %table
-        %tr 
-          %td.name #{@message}
+    %form.form-horizontal
+      #span{:style => "margin-top: 20px;"}
+        .form-group
+          %input#textinput.form-control.input-md{:name => "textinput", :placeholder => "shravvmehtaa@gmail.com", :required => "", :type => "text"}
+          %textarea#message.form-control{:name => "message", :placeholder => "Hey Blah", :style => "margin-top: 20px; height: 400px;"}
+          - mail_merge()

@@ -74,11 +74,14 @@
     width: 100%;  
     max-width: 100%;
     overflow-y: scroll;
-    margin-right: 380px;
+    margin-right: -380px;
     margin-bottom: 200px;
 
     td {
       padding: 5px;
+      display: inline-block;
+      width: 800px;
+      border-bottom: 2px solid #AFBEC0;
     }
   }
 }
@@ -165,7 +168,6 @@ nav {
     }
 
     li:first-child {
-      background-color: #474c50;
       color: #fff;
     }
 

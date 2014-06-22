@@ -2,9 +2,9 @@
   #logo
     =image_tag('logo.svg')
     %span mail
-  = link_to ('/users/compose') do
-    #compose-button
-  #sync-button
+  #compose-button{'onclick' => 'sendDialog();'}
+  = link_to ('/') do
+    #sync-button
   #account
     = image_tag(current_user.profile_pic, :class => "rounded-pic" )
     #dropdown-icon
@@ -29,7 +29,7 @@
         .folder-text Inbox
       %li
         .draft-icon 
-        .folder-text Drafts
+        .folder-text Mail Merge
       %li 
         .star-icon
         .folder-text Starred
@@ -55,7 +55,7 @@
         .label-text School
 #container
   #inbox-header
-    %h3{:style => "margin: 10px 0;"} #{@message["comments"]["data"].last["message"]}
+    %h3{:style => "margin: 10px 0; text-transform: capitalize;"} #{@message["comments"]["data"].last["message"]}
     %p{:style => "margin: 5px 0;"}
       From
       %b 
@@ -75,5 +75,17 @@
       %table
         - @message["comments"]["data"].each do |comment|
           %tr 
-            %td.name #{comment['from']['name']}
-            %td.message #{comment["message"]}
+            %td
+              = image_tag (get_user_info "#{@message['to']['data'].second['id']}"), {:class => "", :style => "display: inline-block; margin-top: -15px; width: 35px; height: 35px;"}
+              #wrap{:style => "display: inline-block;"}
+                %b{:style => ""} #{@message['to']["data"].second['name']}
+                %p to #{@message['to']["data"].first['name']}
+              #wrap{:style => "float: right;"}
+                %b= get_awesome_date "#{comment["created_time"]}"
+              %br
+              %br
+              .message #{comment["message"]}
+              %br
+              .name 
+                From, 
+                %br #{comment['from']['name']}
