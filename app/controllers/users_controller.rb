@@ -48,5 +48,13 @@ class UsersController < ApplicationController
         return regular
     end
   end
-  helper_method :get_user_info, :get_awesome_date
+
+  def get_read_class(status)
+    if (status != "0")
+      return "gray-border"
+    else
+      return "blue-border"
+    end
+  end
+  helper_method :get_user_info, :get_awesome_date, :get_read_class
 end

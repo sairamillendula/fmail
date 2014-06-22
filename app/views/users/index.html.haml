@@ -2,18 +2,40 @@
   #logo
     =image_tag('logo.svg')
     %span mail
+  #compose-button
+  #sync-button
+  #account
+    = image_tag(current_user.profile_pic, :class => "rounded-pic" )
+    .dropdown-icon
 %nav
   #displace
   #search
+    .input-group.add-on
+      %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search email...", :type => "text"}
+        .input-group-btn
+          .btn
+            %i.glyphicon.glyphicon-search
   #folders
+    %hr
+    %h3 Folders
+    %hr
     %ul
-      %li Inbox
-      %li Drafts
-      %li Sent
-      %li Starred
-      %li Boomerang
+      %li 
+        .inbox-icon
+        .folder-text Inbox
+      %li
+        .draft-icon 
+        .folder-text Drafts
+      %li 
+        .star-icon
+        .folder-text Starred
+      %li 
+        .reply-icon
+        .folder-text Boomerang
   #labels 
+    %hr
     %h3 Labels
+    %hr
     %ul
       %li 
         .circle-indicator
@@ -31,15 +53,18 @@
   #inbox-header
     %h3 Inbox
     #buttons
-      #reply
-      #delete
+      .reply-icon
+      .star-icon
+      .trash-icon
+      .info-icon
       #sort
   #all-messages
     .table
       %table
         - @inbox.each do |message|
           %tr 
-            %td= image_tag (get_user_info "#{message['to']['data'].second['id']}"), {:class => "rounded-pic blue-border"}
+            - pic_class = get_read_class "#{message['unread']}"
+            %td= image_tag (get_user_info "#{message['to']['data'].second['id']}"), {:class => "#{pic_class} rounded-pic"}
             %td.name #{message["to"]["data"].second["name"]}
             %td.message #{message["comments"]["data"].last["message"]}
             %td.time= get_awesome_date "#{message['updated_time']}"
