@@ -1,4 +1,17 @@
+#container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin-left: -320px;
+  left: 645px;
+  top: 70px;
+  overflow-y:scroll;
+  overflow-x: none;
+}
+
 .table {
+  max-width: 100%;
+
   tr {
     height: 60px;
   }
@@ -9,6 +22,7 @@
 
 html, body {
   height:100%;
+  width: 100%;
 }
 
 nav {
@@ -16,16 +30,16 @@ nav {
   border-right: 2px solid #000;
   width: 317px;
   height: 100%;
-  margin-top: -70px;
   color: #fff;
 }
 
 #displace {
-  padding-top: 70px;
+  display: inline-block;
 }
 
 #search {
   margin-top: 20px;
+  display: inline-block;
 }
 
 #top-bar {
@@ -36,6 +50,7 @@ nav {
 }
 
 #logo {
+display: inline-block;
   background: #141d26;
   line-height: 63px;
   height: 70px;
@@ -56,8 +71,9 @@ nav {
   }
 }
 
-.folder_title{
-	font-size: 35px;
+#labels {
+      display: inline-block;
+	font-size: 15px;
 	font-weight: lighter;
 }
 
