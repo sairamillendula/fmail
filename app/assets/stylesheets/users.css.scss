@@ -35,6 +35,15 @@
         font-weight: 600;
     }
 
+    tr {
+        padding: 10px 0;
+    }
+
+    tr:hover {
+      background-color: #efefef;
+      cursor: pointer; cursor: hand; 
+    }
+
   table {
     width: 100%;  
     max-width: 100%;
@@ -55,6 +64,21 @@
     td:last-child {
       float: right;
       margin-right: 40px;
+    }
+  }
+}
+
+.table-messages {
+
+  table {
+    width: 100%;  
+    max-width: 100%;
+    overflow-y: scroll;
+    margin-right: 380px;
+    margin-bottom: 200px;
+
+    td {
+      padding: 5px;
     }
   }
 }
@@ -262,6 +286,12 @@ nav {
   margin-left: 20px;
   display: inline-block;
   background-image: image-url("compose.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#compose-button:hover {
+  background-image: image-url("compose_dark.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
